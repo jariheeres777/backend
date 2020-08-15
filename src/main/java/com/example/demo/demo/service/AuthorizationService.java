@@ -89,7 +89,9 @@ public class AuthorizationService {
         Account user = new Account(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()),
+                signUpRequest.getRole(),
                 signUpRequest.getDate());
+
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();

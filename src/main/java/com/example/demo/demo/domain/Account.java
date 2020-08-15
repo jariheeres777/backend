@@ -1,7 +1,5 @@
 package com.example.demo.demo.domain;
 
-
-
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -26,14 +24,15 @@ public class Account {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    public Account() {
+    public Account(String username, String email, String encode, Set<String> role, int date) {
     }
 
-    public Account(String username, String email ,String password, int date) {
+    public Account(String username, String email ,String password, int date,Set<Role> roles) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.date =date;
+        this.roles= roles;
     }
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user",
@@ -91,4 +90,5 @@ public class Account {
     public int getDate() { return date; }
 
     public void setDate(int date) { this.date = date; }
+
 }

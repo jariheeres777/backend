@@ -15,7 +15,7 @@ public class Advertisement {
     private int pricead;
     private String adtext;
     private String adPictures;
-    private String filePath;
+
 
     public Advertisement() {
     }
